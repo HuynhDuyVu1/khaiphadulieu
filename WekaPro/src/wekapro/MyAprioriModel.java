@@ -27,7 +27,7 @@ public class MyAprioriModel extends MyKnowledgeModel{
     public void mineAssociationRules() throws Exception{
     //Loc du lieu
 //        this.newData = removeData(this.dataset);
-        this.newData = convertData(this.dataset);
+        this.newData = convert2Binary(this.dataset);
     //Thiet lap thong so cho modeel Apriori
         apriori.setOptions(this.model_options);
         apriori.buildAssociations(this.newData);
