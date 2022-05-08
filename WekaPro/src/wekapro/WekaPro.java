@@ -5,6 +5,8 @@
  */
 package wekapro;
 
+import weka.classifiers.trees.J48;
+
 /**
  *
  * @author vuhuy
@@ -48,7 +50,9 @@ public class WekaPro {
           model.buildDecisionTree();
           model.evaluateDecisionTree();
           System.out.println(model);
-        
+//        model.saveModel("D:\\Data\\model\\decisiontree.model", model.tree);
+          model.tree = (J48)model.loadModel("D:\\Data\\model\\decisiontree.model");
+          model.predictClassLabel(model.testset);
     }
     
 }
